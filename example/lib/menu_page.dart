@@ -12,24 +12,24 @@ class MenuScreen extends StatelessWidget {
   final int? current;
 
   const MenuScreen(
-    this.mainMenu, {
+    this.mainMenu, {super.key, 
     this.callback,
     this.current,
   });
 
   @override
   Widget build(BuildContext context) {
-    const _androidStyle = TextStyle(
+    const androidStyle = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,
       color: Colors.white,
     );
-    const _iosStyle = TextStyle(color: Colors.white);
+    const iosStyle = TextStyle(color: Colors.white);
     final style = kIsWeb
-        ? _androidStyle
+        ? androidStyle
         : Platform.isAndroid
-            ? _androidStyle
-            : _iosStyle;
+            ? androidStyle
+            : iosStyle;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -147,13 +147,13 @@ class MenuItemWidget extends StatelessWidget {
   final bool? selected;
 
   const MenuItemWidget({
-    Key? key,
+    super.key,
     this.item,
     this.widthBox,
     this.style,
     this.callback,
     this.selected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

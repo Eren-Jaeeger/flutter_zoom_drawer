@@ -17,13 +17,13 @@ class PageStructure extends StatelessWidget {
   final double? elevation;
 
   const PageStructure({
-    Key? key,
+    super.key,
     this.title,
     this.child,
     this.actions,
     this.backgroundColor,
     this.elevation,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

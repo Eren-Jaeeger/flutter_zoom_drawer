@@ -14,6 +14,8 @@ class HomeScreen extends StatefulWidget {
     MenuClass(tr("about_us"), Icons.info_outline, 4),
   ];
 
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -31,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         callback: _updatePage,
         current: 0,
       ),
-      mainScreen: MainScreen(),
+      mainScreen: const MainScreen(),
       openCurve: Curves.fastOutSlowIn,
       showShadow: false,
       slideWidth: MediaQuery.of(context).size.width * (_isRtl ? .55 : 0.65),
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.grey.withOpacity(0.5),
           spreadRadius: 5,
           blurRadius: 7,
-          offset: Offset(0, 3), // changes position of shadow
+          offset: const Offset(0, 3), // changes position of shadow
         ),
       ],
     );
@@ -63,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }

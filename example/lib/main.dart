@@ -209,7 +209,7 @@ void main() {
 const Color p = Color(0xff416d69);
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -229,7 +229,7 @@ class MyApp extends StatelessWidget {
 final ZoomDrawerController z = ZoomDrawerController();
 
 class Zoom extends StatefulWidget {
-  const Zoom({Key? key}) : super(key: key);
+  const Zoom({super.key});
 
   @override
   _ZoomState createState() => _ZoomState();
@@ -261,12 +261,12 @@ class _ZoomState extends State<Zoom> {
               z.close?.call()?.then(
                     (value) => navigator.push(
                       MaterialPageRoute(
-                        builder: (_) => TestPage(),
+                        builder: (_) => const TestPage(),
                       ),
                     ),
                   );
             },
-            child: Text(
+            child: const Text(
               "Push Page",
               style: TextStyle(fontSize: 24.0, color: Colors.black),
             ),
@@ -296,12 +296,12 @@ class _ZoomState extends State<Zoom> {
               z.close?.call()?.then(
                     (value) => navigator.push(
                       MaterialPageRoute(
-                        builder: (_) => TestPage(),
+                        builder: (_) => const TestPage(),
                       ),
                     ),
                   );
             },
-            child: Text(
+            child: const Text(
               "Push Page",
               style: TextStyle(fontSize: 24.0, color: Colors.black),
             ),
@@ -313,7 +313,7 @@ class _ZoomState extends State<Zoom> {
 }
 
 class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+  const Body({super.key});
 
   @override
   State<Body> createState() => _BodyState();
@@ -363,7 +363,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
 class TwoPanels extends StatefulWidget {
   final AnimationController controller;
 
-  const TwoPanels({Key? key, required this.controller}) : super(key: key);
+  const TwoPanels({super.key, required this.controller});
 
   @override
   _TwoPanelsState createState() => _TwoPanelsState();
@@ -387,16 +387,16 @@ class _TwoPanelsState extends State<TwoPanels> with TickerProviderStateMixin {
   ));
 
   Animation<RelativeRect> getPanelAnimation(BoxConstraints constraints) {
-    final _height = constraints.biggest.height;
-    final _backPanelHeight = _height - _headerHeight;
-    const _frontPanelHeight = -_headerHeight;
+    final height = constraints.biggest.height;
+    final backPanelHeight = height - _headerHeight;
+    const frontPanelHeight = -_headerHeight;
 
     return RelativeRectTween(
       begin: RelativeRect.fromLTRB(
         0.0,
-        _backPanelHeight,
+        backPanelHeight,
         0.0,
-        _frontPanelHeight,
+        frontPanelHeight,
       ),
       end: const RelativeRect.fromLTRB(0.0, 100, 0.0, 0.0),
     ).animate(
@@ -461,7 +461,7 @@ class _TwoPanelsState extends State<TwoPanels> with TickerProviderStateMixin {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
+                      const Text(
                         "Back Panel",
                         style: TextStyle(fontSize: 24.0, color: Colors.white),
                       ),
@@ -479,11 +479,11 @@ class _TwoPanelsState extends State<TwoPanels> with TickerProviderStateMixin {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => TestPage(),
+                              builder: (_) => const TestPage(),
                             ),
                           );
                         },
-                        child: Text("Push"),
+                        child: const Text("Push"),
                       ),
                       const SizedBox(
                         height: 16,
@@ -555,13 +555,13 @@ class _TwoPanelsState extends State<TwoPanels> with TickerProviderStateMixin {
 }
 
 class TestPage extends StatelessWidget {
-  const TestPage({Key? key}) : super(key: key);
+  const TestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text("Test Page !"),
       ),
     );
