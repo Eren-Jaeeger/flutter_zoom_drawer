@@ -44,7 +44,7 @@ class StyleDefaultWidget extends StatelessWidget {
                   drawerShadowsBackgroundColor.withAlpha(60),
             ),
             angle: (angle == 0.0) ? 0.0 : angle - 8,
-            scale: .9,
+            scale: .80,
             slide: slidePercent * 2,
           ),
 
@@ -54,8 +54,8 @@ class StyleDefaultWidget extends StatelessWidget {
               color: shadowLayer2Color ??
                   drawerShadowsBackgroundColor.withAlpha(180),
             ),
-            angle: (angle == 0.0) ? 0.0 : angle - 4.0,
-            scale: .95,
+            angle: (angle == 0.0) ? 0.0 : angle - 7.0,
+            scale: .90,
             slide: slidePercent,
           )
         ],
